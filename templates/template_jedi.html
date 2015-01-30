@@ -1,0 +1,11 @@
+  {# Link to parent template #}
+{% extends "base.html" %}
+
+  {# "block 'content'" link to base #}
+{% block content %}
+  <h1>Your jedi name is {{last_name[:3]}}{{first_name[:2]}}</h1>
+  <p>
+    Here's a groovy photo of Luke Skywalker.  Awww...
+  </p>
+  <img src="http://3-ps.googleusercontent.com/hk/P-2qNEKK51p7WeNyQvHIG7zF09/www.geek.com.mx/wp-content/uploads/2014/12/270x270xLuke-luke-skywalker-270x270.jpg,qa8ebe4.pagespeed.ic._Hb4g1IlE1ZHEPUd0Ygp.jpg">
+{% endblock %}

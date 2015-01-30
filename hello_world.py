@@ -1,6 +1,6 @@
 
 # Import Flask class as basis for web application
-from flask import Flask
+from flask import Flask, render_template
 
 # Instance of web application
 app = Flask(__name__)
@@ -11,20 +11,11 @@ def hello_world():
 
 @app.route("/hello/<name>")  # Use <> as placeholder for URL string text to pass to function
 def hello_person(name):  # 'name' used as placeholder and function argument
-  html = """
-        <h1>
-            Hello {}!
-        </h1>
-        <p>
-            Here's a picture of a kitten.  Awww...
-        </p>
-        <img src="http://placekitten.com/g/200/300">
-  """
-  return html.format(name.title())
+  return render_template('template_hello.html', user_name=name)
 
 @app.route("/jedi/<first_name>/<last_name>")
 def jedi_name(first_name, last_name):
-  return "Your jedi name is {}{}".format(last_name[:3], first_name[:2])
+  return render_template('template_jedi.html', first_name = first_name, last_name = last_name)
   
   
 if __name__ == "__main__":

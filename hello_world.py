@@ -5,8 +5,9 @@ from flask import Flask, render_template
 # Instance of web application
 app = Flask(__name__)
 
-@app.route("/hello") # Decoration that makes function run when URL is visited
+@app.route("/") # Decoration that makes function run when URL is visited
 def hello_world():
+  return render_template('base.html')
   return "Hello World!"
 
 @app.route("/hello/<name>")  # Use <> as placeholder for URL string text to pass to function
